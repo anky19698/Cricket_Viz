@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-match = 'IRE_vs_IND.csv'
+match = 'Data_IRE_vs_IND.csv'
 
 
 # team_color_mapping = {
