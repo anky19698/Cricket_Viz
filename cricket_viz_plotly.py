@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-match = 'Data_IRE_vs_IND.csv'
+match = 'Data_IND_vs_PAK.csv'
 
 
 # team_color_mapping = {
@@ -31,7 +31,8 @@ team_color_mapping = {
     "IND": ["#78a5ff", "#ff8266"],  # Blue and orange shades for Indian teams
     "IRE": ["#008000", "#0000ff"],  # Green and blue shades for Irish teams
     "NED": ["#FFA500", "#0000FF"],  # Orange and blue shades for Dutch teams
-    "NEP": ["#8A2BE2", "#FF0000"]  # Violet and red shades for Nepali teams
+    "NEP": ["#8A2BE2", "#FF0000"], # Violet and red shades for Nepali teams
+    "PAK": ["#008000", "#90EE90"]
 }
 
 
@@ -111,14 +112,13 @@ for i in range(len(inning2)):
 
 # Add powerplay and middle overs lines
 fig.add_shape(type="line",
-              x0=40, y0=0, x1=40, y1=inning1['cumRuns'].max() + 10,
+              x0=38, y0=0, x1=38, y1=inning1['cumRuns'].max() + 10,
               line=dict(color="white", width=1, dash="dash"),
               xref='x', yref='y')
 fig.add_shape(type="line",
-              x0=96, y0=0, x1=96, y1=inning1['cumRuns'].max() + 10,
+              x0=94, y0=0, x1=94, y1=inning1['cumRuns'].max() + 10,
               line=dict(color="white", width=1, dash="dash"),
               xref='x', yref='y')
-
 # Powerplay Runs Calculation
 inning1_powerplay_runs = None
 for i in range(len(inning1)):
@@ -165,22 +165,22 @@ if len(inning2) > 0:
 fig.add_annotation(x=18, y=0, text=f"Powerplay",
                    showarrow=False, font=dict(color="white", size=12))
 
-fig.add_annotation(x=18, y=105, text=f"{inning1_powerplay_runs}<br>{inning2_powerplay_runs}",
+fig.add_annotation(x=18, y=125, text=f"{inning1_powerplay_runs}<br>{inning2_powerplay_runs}",
                    showarrow=False, font=dict(color="white", size=16))
 
 # Add middle overs annotation
 fig.add_annotation(x=70, y=0, text="Middle Overs",
                    showarrow=False, font=dict(color="white", size=12))
 
-fig.add_annotation(x=70, y=105, text=f"{inning1_mid_runs}<br>{inning2_mid_runs}",
+fig.add_annotation(x=70, y=125, text=f"{inning1_mid_runs}<br>{inning2_mid_runs}",
                    showarrow=False, font=dict(color="white", size=16))
 
 
 # Add death overs annotation
-fig.add_annotation(x=100, y= 0, text="Death Overs",
+fig.add_annotation(x=110, y= 0, text="Death Overs",
                    showarrow=False, font=dict(color="white", size=12))
 
-fig.add_annotation(x=100, y=105, text=f"{inning1_death_runs}<br>{inning2_death_runs}",
+fig.add_annotation(x=110, y=125, text=f"{inning1_death_runs}<br>{inning2_death_runs}",
                    showarrow=False, font=dict(color="white", size=16))
 
 
