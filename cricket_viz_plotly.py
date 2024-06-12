@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-match = 'Data_IND_vs_PAK.csv'
+match = 'Data_USA_vs_IND.csv'
 
 
 # team_color_mapping = {
@@ -31,7 +31,7 @@ team_color_mapping = {
     "IND": ["#78a5ff", "#ff8266"],  # Blue and orange shades for Indian teams
     "IRE": ["#008000", "#0000ff"],  # Green and blue shades for Irish teams
     "NED": ["#FFA500", "#0000FF"],  # Orange and blue shades for Dutch teams
-    "NEP": ["#8A2BE2", "#FF0000"], # Violet and red shades for Nepali teams
+    "USA": ["#8A2BE2", "#FF0000"], # Violet and red shades for Nepali teams
     "PAK": ["#008000", "#90EE90"]
 }
 
